@@ -19,10 +19,13 @@ h1 {
 </style>
 """, unsafe_allow_html=True)
 
-st.title("📊 RetailPulse Dashboard")
-st.markdown(
-    "AI Powered Customer Analytics & Demand Forecasting"
-)
+st.markdown("""
+# 📊 RetailPulse
+
+### AI Powered Customer Analytics & Demand Forecasting
+
+Predict Demand • Detect Churn • Optimize Inventory
+""")
 
 # Sidebar
 menu = st.sidebar.selectbox(
