@@ -65,29 +65,33 @@ if menu == "🏠 Home":
             "data/inventory_report.csv"
         )
 
-        col1.metric(
-            "Customers",
-            len(customers)
-        )
+        st.subheader("📈 Business Overview")
 
-        col2.metric(
-            "Forecast Days",
-            len(forecast)
-        )
+        col1, col2, col3, col4 = st.columns(4)
 
-        col3.metric(
-            "High Risk Customers",
-            len(
-                churn[
-                    churn["Risk_Probability"] > 0.80
-                ]
+        with col1:
+            st.metric(
+                label="👥 Customers",
+                value=f"{len(customers):,}"
             )
-        )
 
-        col4.metric(
-            "Products",
-            len(inventory)
-        )
+        with col2:
+            st.metric(
+                label="📈 Forecast Days",
+                value=f"{len(forecast):,}"
+            )
+
+        with col3:
+            st.metric(
+                label="⚠️ High Risk Customers",
+                value=f"{len(churn[churn['Risk_Probability'] > 0.80]):,}"
+            )
+
+        with col4:
+            st.metric(
+                label="📦 Products",
+                value=f"{len(inventory):,}"
+            )
 
     except:
         st.warning(
