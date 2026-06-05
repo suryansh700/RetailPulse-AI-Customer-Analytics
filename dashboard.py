@@ -107,7 +107,42 @@ elif menu == "👥 Customer Segmentation":
         "data/customer_segments.csv"
     )
 
-    st.dataframe(df.head())
+    segment_counts = df["Segment"].value_counts()
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        st.metric(
+            "👑 VIP",
+            segment_counts.get("VIP", 0)
+        )
+
+    with col2:
+        st.metric(
+            "👥 Regular",
+            segment_counts.get("Regular", 0)
+        )
+
+    with col3:
+        st.metric(
+            "⚠️ At Risk",
+            segment_counts.get("At Risk", 0)
+        )
+
+    with col4:
+        st.metric(
+            "❌ Lost",
+            segment_counts.get("Lost", 0)
+        )
+    
+
+    st.subheader("Customer Data")
+
+    st.dataframe(
+        df,
+        use_container_width=True,
+        height=400
+    )
 
     fig = px.scatter(
         df,
