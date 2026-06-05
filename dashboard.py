@@ -114,7 +114,13 @@ elif menu == "👥 Customer Segmentation":
         x="Frequency",
         y="Monetary",
         color="Segment",
-        hover_data=["Recency"]
+        size="Monetary",
+        hover_data=["Recency"],
+        title="Customer Segmentation Analysis"
+    )
+
+    fig.update_layout(
+        height=700
     )
 
     st.plotly_chart(
