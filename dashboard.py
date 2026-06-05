@@ -28,19 +28,21 @@ Predict Demand • Detect Churn • Optimize Inventory
 """)
 
 # Sidebar
-menu = st.sidebar.selectbox(
-    "Select Module",
+st.sidebar.title("📊 RetailPulse")
+
+menu = st.sidebar.radio(
+    "Navigation",
     [
-        "Home",
-        "Customer Segmentation",
-        "Demand Forecasting",
-        "Churn Prediction",
-        "Inventory Optimization"
+        "🏠 Home",
+        "👥 Customer Segmentation",
+        "📈 Demand Forecasting",
+        "⚠️ Churn Prediction",
+        "📦 Inventory Optimization"
     ]
 )
 
 # HOME PAGE
-if menu == "Home":
+if menu == "🏠 Home":
 
     st.header("Project Overview")
 
@@ -93,7 +95,7 @@ if menu == "Home":
         )
 
 # CUSTOMER SEGMENTATION
-elif menu == "Customer Segmentation":
+elif menu == "👥 Customer Segmentation":
 
     st.header("Customer Segmentation")
 
@@ -123,7 +125,7 @@ elif menu == "Customer Segmentation":
     )
 
 # DEMAND FORECASTING
-elif menu == "Demand Forecasting":
+elif menu == "📈 Demand Forecasting":
 
     st.header("Demand Forecast")
 
@@ -154,7 +156,7 @@ elif menu == "Demand Forecasting":
     )
 
 # CHURN
-elif menu == "Churn Prediction":
+elif menu == "⚠️ Churn Prediction":
 
     st.header("Customer Churn Prediction")
 
@@ -188,8 +190,7 @@ elif menu == "Churn Prediction":
     )
 
 # INVENTORY
-elif menu == "Inventory Optimization":
-
+elif menu == "📦 Inventory Optimization":
     st.header(
         "Inventory Optimization"
     )
